@@ -36,7 +36,7 @@ Add the desired items to your cart.
 Proceed to checkout and make the payment using one of the integrated payment gateways.
 Your order will be processed, and you will receive a confirmation email.
 Credits
-HK01_FoodMenu is developed by [Your Name] and [Your Team Name] as part of a web development project.
+HK01_FoodMenu is developed by HK01 as part of a web development project.
 
 License
 HK01_FoodMenu is licensed under the MIT License.
