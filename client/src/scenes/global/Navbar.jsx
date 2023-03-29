@@ -17,7 +17,7 @@ const Navbar = () =>{
             onClick={() => Navigate("/")} 
             sx={{'&:hover':{ cursor:"pointer"}}}
             color={shades.secondary[300]}>
-                <h1>Victor's Ecommerce</h1>
+                <h1>HK01 Food Menu</h1>
             </Box>
             <Box display="flex" justifyContent="space-between" columnGap="20px"zIndex={2}>
                 <IconButton sx={{ color: "black", '&:hover':{ backgroundColor:"orange"}}} >

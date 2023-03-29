@@ -14,7 +14,7 @@ const Footer = () =>{
                 <Box width="clamp(20%, 30%, 40%)">
                     <Typography color={shades.secondary[500]}> Ecommer</Typography>
                     <Box>
-                        This is Victor's creation. 
+                        This is HK01 Food Menu 
                         This is a sample website created from React and Strapi to host a Ecommerce website which has menu, product details, and payment pages. 
                         The products listed are not for sales purpose and any commercial use. 
                     </Box>
@@ -45,10 +45,10 @@ const Footer = () =>{
                         Contact Me
                     </Typography>
                     <Typography mb="30px">
-                        19 Rosebank Dr, Scarborough, Ontario, M1B5Z2 
+                    941 Progress Ave, Scarborough, ON M1G 3T8
                     </Typography>
                     <Typography mb="30px" sx={{ wordWrap: "break-word" }}>
-                        Email: victorleung93@gmail.com
+                        Email: HK01@gmail.com
                     </Typography>
                     <Typography mb="30px">+1 (222)333-4444</Typography>
                 </Box>

@@ -106,7 +106,7 @@ const CartMenu = ()=>{
                     <Box m="20px 0">
                         <FlexBox m="20px 0">
                             <Typography fontWeight="bold"> Subtotal:</Typography>
-                            <Typography fontWeight="bold" position="absolute" right="80px" > ${totalPrice} </Typography>
+                            <Typography fontWeight="bold" sx={{ml:"200px"}}  > ${totalPrice} </Typography>
                         </FlexBox>
                         <Button  sx={{ 
                             backgroundColor: shades.primary[400],
