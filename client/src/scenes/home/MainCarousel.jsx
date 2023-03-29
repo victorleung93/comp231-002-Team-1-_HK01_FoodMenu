@@ -4,8 +4,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import NavigateNextIcon  from '@mui/icons-material/NavigateNext';
 import  NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import {shades} from "../../theme";
-//import { fontSize } from '@mui/system';
-//import all image
+
 
 const importAll = (r) =>
     r.keys().reduce((acc, item)=>{
@@ -32,7 +31,7 @@ const MainCarousel = () =>{
         )}>
         {Object.values(heroTextureImports).map((texture, index)=>(
             <Box key={`carousel-image-${index}`} >
-                <img src={texture} alt={`carousel-${index}`}  style={{ width:"100%", height:"700px", objectFit:"cover",borderRadius:"0",  backgroundAttachment:"fixed"}}/>
+                <img src={texture} alt={`carousel-${index}`}  style={{ width:"100%", height:"700px", margin:"70px 0",objectFit:"cover", borderRadius:"0",  backgroundAttachment:"fixed"}}/>
                 <Box color="white" padding="20px" borderRadius="1px" textAlign="left" backgroundColor=" rgb(0,0,0,0.6)" position="absolute" top="46%" 
                 left={isNonMobile ? "10%":"0" } right={isNonMobile ? undefined:"0" } margin={isNonMobile ? undefined:"0, auto" } maxWidth={isNonMobile ? undefined:"240px" }
                 >

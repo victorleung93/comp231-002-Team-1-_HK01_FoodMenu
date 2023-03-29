@@ -8,7 +8,7 @@ const Footer = () =>{
       } = useTheme();
 
     return(
-        <Box margin-top="70px" padding="40px 0" backgroundColor= { neutral.light } >
+        <Box margin="100px 0 0 0 " padding="40px 0" backgroundColor= { neutral.light } >
             <Box width="80%" margin="auto" display="flex" justifyContent="space-between" flexwrap="wrap" rowGap="30px" columnGap="clamp(20px, 30px, 40px)">
                 
                 <Box width="clamp(20%, 30%, 40%)">

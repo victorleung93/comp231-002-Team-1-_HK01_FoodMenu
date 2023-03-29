@@ -10,6 +10,7 @@ import { useTheme } from "@emotion/react";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import ItemList from "../../components/itemList";
 
+
 const ItemDetails = () =>{
     const dispatch = useDispatch();
     const { itemId } = useParams();
@@ -17,7 +18,6 @@ const ItemDetails = () =>{
     const [ count, setCount ] = useState(1);
     const [ item, setItem ] = useState(null);
     const [ items, setItems ] = useState([]);
-
 
     const handleChange = (event, newValue) => {
         setValue(newValue);  
@@ -35,8 +35,12 @@ const ItemDetails = () =>{
           { method: "GET" }
         );
         const itemsJson = await items.json();
-        setItems(itemsJson.data);
+        const idToRemove = itemId;
+        const randomItems = itemsJson.data.sort(() => Math.random() - 0.5);
+        const filteredItems = randomItems.filter((item) => item.id != idToRemove);
+        setItems(filteredItems);
       }
+      
     
     useEffect(() =>{
         getItem();
@@ -49,26 +53,22 @@ const ItemDetails = () =>{
             <div style={{display:"flex", flexWrap:"wrap", columnGap:"40px"}}>
                 <div style={{flex:"1 1 40%", marginBottom:"40px" }}>
                     {/*Image*/}
-                    <img src={`http://localhost:1337${item?.attributes?.image?.data?.attributes?.url}`} style={{objectFit : "contain"}} alt={item?.name} width="400px" height="400px" />
+                    <img src={`http://localhost:1337${item?.attributes?.image?.data?.attributes?.url}`} style={{objectFit : "contain" , width:"500px", height:"600px"}} alt={item?.name}  />
                 </div>
                 <div style={{flex:"1 1 50%", marginBottom:"40px" }}>
-                    {/*Action*/}
-                    <div style={{display:"flex", justifyContent:"space-between"}}>
-                        <div>Home</div>
-                        <div>Prev Next</div>
-                    </div>
+                    
                     <div style={{margin:"65px 0 25px 0"}}>
-                        <Typography variant="h3">{item?.attributes?.name}</Typography>
+                        <Typography sx={{mb:"20px"}} variant="h3">{item?.attributes?.name}</Typography>
                         <Typography>${item?.attributes?.price}</Typography>
-                        <Typography sx={{mt:"20px"}}>{item?.attributes?.longDescription}</Typography>
+                        <Typography sx={{mt:"20px"}}>{item?.attributes?.shortDescription}</Typography>
                     </div>
-
+                    {/*Button*/}
                     <div style={{display:"flex", alignItem:"center", minheight:"50px"}}>
                         <div style={{display:"flex", alignItem:"center", border:"1px solid orange", marginRight:"20px", padding:"5px 5px" }}>
                         <IconButton onClick={()=> setCount(Math.max(count -1, 1))}>
                             <RemoveIcon/>
                         </IconButton>
-                        <Typography sx={{p:"10px"}} color= { shades.primary[300]}>
+                        <Typography sx={{p:"15px", m:"auto"}} color= { shades.primary[300]}>
                             {count}
                         </Typography>
                         <IconButton onClick={()=> setCount(count + 1)}>
@@ -81,15 +81,45 @@ const ItemDetails = () =>{
                             Add to Cart
                         </Button>
                         </div>
-                    </div>
-                </div>
 
+                        <div>
+                            <div style={{margin:"10px" , display:"flex",alignItems:"center"}}>
+                            <FavoriteBorderOutlinedIcon /> 
+                            <Typography style={{padding:"10px 20px"}}>Add to Favourite</Typography>
+                            </div>
+                            
+                        </div>
+                    </div >
+                    {/*Info*/}
+                    <div style={{margin:"30px 0"}}>
+                        <Typography variant="h4">Categories: {item?.attributes?.category.replace(/([A-Z])/g, " $1").replace(/^./, (str)=> str.toUpperCase("\ "))}</Typography>
+                    </div>
+                    <Tabs value={value} onChange={handleChange}>
+                        <Tab label="DESCRIPTION" value="description"/>
+                        <Tab label="REVIEWS" value="reviews"/>
+                    </Tabs>
+
+                <div style={{display:"flex" , flexWrap:"wrap", gap:"15px"}}>
+                    {value === "description" && (
+                        <div>{item?.attributes?.longDescription}</div>
+                    ) }
+                    {value === "reviews"}
+                </div>
+                </div>
             </div>
-            
+            <div style={{margin:"20px 0"}}>
+                <div style={{margin:"50px 0" ,width:"100%"}}>
+                        <Typography variant="h3" fontWeight="bold">
+                            Other Items:
+                        </Typography>
+                        <div style={{margin:" 20px", display:"flex", flexWrap:"wrap", columnGap:"1.5%", justifyContent:"space-between"}}>
+                            {items.slice(0,3).map((item,i) => 
+                                <ItemList item={item} key={`${i}`} />)}
+                        </div>
+                </div>
+            </div>
         </div>
-    
-)
-    
+    )
 }
 
 export default ItemDetails;

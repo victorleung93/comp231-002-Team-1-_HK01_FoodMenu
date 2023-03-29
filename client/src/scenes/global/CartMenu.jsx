@@ -50,8 +50,8 @@ const CartMenu = ()=>{
                     {/*Header*/}
                     <FlexBox mb="15px">
                         <Typography variant="h3">Shopping Cart ({cart.length})</Typography> 
-                        <IconButton onClick ={()=> dispatch(setIsCartOpen({}))}>
-                            <CloseIcon/>
+                        <IconButton  onClick ={()=> dispatch(setIsCartOpen({}))}>
+                            <CloseIcon sx={{fontSize:"2rem"}}/>
                         </IconButton>
                     </FlexBox>
                     {/*Cart List*/}
@@ -90,7 +90,7 @@ const CartMenu = ()=>{
                                                 </IconButton>
                                             </Box>
                                             {/*Price*/}
-                                                <Typography fontWeight="bold">
+                                                <Typography marginLeft="20px" fontWeight="bold">
                                                     ${item.attributes.price}
                                                 </Typography>
                                         </FlexBox>
@@ -103,17 +103,18 @@ const CartMenu = ()=>{
                     </Box>
                     
                     {/* Actions */}
-                    <Box m="20px 0" >
+                    <Box m="20px 0">
                         <FlexBox m="20px 0">
-                            <Typography fontWeight="bold"> Subtotal: </Typography>
-                            <Typography fontWeight="bold"> ${totalPrice} </Typography>
+                            <Typography fontWeight="bold"> Subtotal:</Typography>
+                            <Typography fontWeight="bold" position="absolute" right="80px" > ${totalPrice} </Typography>
                         </FlexBox>
-                        <Button sx={{ 
+                        <Button  sx={{ 
                             backgroundColor: shades.primary[400],
                             color: "white",
                             minWidth: "100px",
                             padding: "20px 40px",
-                            m: "20px 0"
+                            m: "20px 0",
+                            '&:hover':{ backgroundColor: shades.neutral[300], color:"black" }
                         }} onClick={() => {
                             navigate("/order");
                             dispatch(setIsCartOpen({}));

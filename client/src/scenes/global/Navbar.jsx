@@ -4,14 +4,14 @@ import { PersonOutline, ShoppingBagOutlined, MenuOutlined, SearchOutlined } from
 import { useNavigate } from 'react-router-dom';
 import { shades } from "../../theme";
 import { setIsCartOpen } from '../../state';
-//import { minWidth } from '@mui/system';
+
 
 const Navbar = () =>{
     const Navigate = useNavigate();
     const dispatch = useDispatch();
     const cart = useSelector((state) => state.cart.cart)
     return (
-    <Box display="flex" alignItems="center" width="100%" height="60px" backgroundColor="rgba(255,255,255,0.95" color="black" position="absolute">
+    <Box display="flex" alignItems="center" width="100%" height="70px" backgroundColor="rgba(255,255,255,0.9)" color="black" position="fixed" top="0" left="0" zIndex="1" margin="0 0 10px 0" >
         <Box width="80%" margin="auto" display="flex" justifyContent="space-between" alignItems="center">
             <Box 
             onClick={() => Navigate("/")} 
