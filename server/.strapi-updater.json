@@ -1,4 +1,9 @@
 {
+<<<<<<< HEAD
 	"latest": "4.9.0",
 	"lastUpdateCheck": 1680469880698
+=======
+	"latest": "4.8.2",
+	"lastUpdateCheck": 1680060982070
+>>>>>>> dd0615d5c13959a9acf83c4a06d200ec96d2e37b
 }
