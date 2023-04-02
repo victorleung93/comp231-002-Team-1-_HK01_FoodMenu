@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Fauna+One&display=swap');
+
+*{
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding:0;
+}
+
+.App{
+  margin: auto;
+}
+img{
+  object-fit: cover  ;
+  border-radius: 10px;
+  position:static;
+}
