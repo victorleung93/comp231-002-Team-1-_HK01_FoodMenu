@@ -1,0 +1,14 @@
+.form{
+
+
+
+display: flex;
+   top:-20%;
+
+   transform: translateX(-50%);
+
+   min-height: calc(100vh);
+
+
+
+}

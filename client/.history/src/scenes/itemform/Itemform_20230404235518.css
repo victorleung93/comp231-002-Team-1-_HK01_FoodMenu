@@ -1,0 +1,10 @@
+.form{
+
+
+   display: flex;
+   justify-content: center;
+   flex-direction: column; /* Arrange flex items vertically */
+   align-items: flex-end;
+
+
+}

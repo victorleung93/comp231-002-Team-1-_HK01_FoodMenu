@@ -1,0 +1,15 @@
+.form{
+   height: 500;
+
+
+   position: absolute;
+
+   left:50%;
+
+   transform: translateX(-50%);
+
+
+
+
+
+}
