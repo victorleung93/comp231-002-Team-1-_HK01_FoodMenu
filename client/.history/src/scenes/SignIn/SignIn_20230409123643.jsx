@@ -1,0 +1,118 @@
+import React from 'react'
+import { useRef, useState, useEffect, useContext } from 'react';
+import AuthContext from "../../context/AuthProvider";
+import axios from "axios";
+const urlForServer = "http://localhost:3200/";
+
+ const SignIn = () => {
+    const { setAuth } = useContext(AuthContext);
+    const userRef = useRef();
+    const errRef = useRef();
+
+    const [user, setUser] = useState('');
+    const [pwd, setPwd] = useState('');
+    const [errMsg, setErrMsg] = useState('');
+    const [success, setSuccess] = useState(false);
+
+    const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [formData, setFormData] = useState({
+    username:'',
+    password:''
+
+
+  });
+
+
+  
+    const handleSubmit= async (e) => {
+    e.preventDefault();
+
+    console.log(username, password);
+
+    console.log(formData.username,formData.password);
+        user=await axios.post(urlForServer + "login", {
+      username: formData.username,
+      password: formData.password,
+      email: formData.email,
+        
+  
+    });
+    
+
+  }
+
+  return (
+    // <div className="App" >
+    //     <form>
+    //         <label>User Name: </label>
+    //         <input type='text' id="userName"></input>
+    //         <br></br>
+    //         <br></br>
+    //         <label>Password: </label>
+    //         <input type='text' id="password"></input>
+    //         <br></br>
+    //         <br></br>
+    //         <button>Sign In</button>
+
+    //     </form>
+    // </div>
+    <div className="App"  style={{width:"80%", margin:"80px auto"}}>
+     <div className="auth-wrapper">
+      <div className="auth-inner">
+        <form onSubmit={handleSubmit}>
+          <h3>Sign In</h3>
+
+          <div className="mb-3">
+            <label>Email address</label>
+            <input
+              type="email"
+              className="form-control"
+              placeholder="Enter email"
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+
+          <div className="mb-3">
+            <label>Password</label>
+            <input
+              type="password"
+              className="form-control"
+              placeholder="Enter password"
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+
+          <div className="mb-3">
+            <div className="custom-control custom-checkbox">
+              <input
+                type="checkbox"
+                className="custom-control-input"
+                id="customCheck1"
+              />
+              <label className="custom-control-label" htmlFor="customCheck1">
+                Remember me
+              </label>
+            </div>
+          </div>
+
+          <div className="d-grid">
+            <button type="submit" className="btn btn-primary">
+              Submit
+            </button>
+          </div>
+          <p className="forgot-password text-right">
+            <a href="/sign-up">Sign Up</a>
+          </p>
+        </form>
+      </div>
+    </div>
+ </div>
+  )
+
+}
+
+
+
+
+export default SignIn;
