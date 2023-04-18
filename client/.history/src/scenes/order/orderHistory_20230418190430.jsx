@@ -93,7 +93,7 @@ const checkTheBill=()=>{
     })} 
         
         </div>:<div>
-         
+          <p>1313131313</p>
         {display.map((item) => {
             add(item.subPrice)
               return(<div key={item._id}>

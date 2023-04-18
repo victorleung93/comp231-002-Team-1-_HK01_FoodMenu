@@ -33,9 +33,7 @@ const ItemSchema = new mongoose.Schema({
         // required:true
         // unique: true
     },
-    available:{
-        type:String
-    }
+    available:{}
     // description:{
     //     type:String,
     // },

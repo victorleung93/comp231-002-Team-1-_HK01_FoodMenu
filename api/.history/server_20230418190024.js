@@ -139,15 +139,17 @@ app.get('/order',(req,res)=>{
     
 });
 
-app.get("/menu", async (req, res) => {
-    const available = req.params.available;
-    item.find({ available :"available"}).then((item) => {
-        res.send(item);
-        console.log(req.query);
-    }).catch((err) => {
-        console.log(err);
-        res.status(500).send("Internal Server Error");
+app.get('/menu',(req,res)=>{
+    //return all q in the survey
+    // let _id=req.params._id
+    // surveyList.findById({_id}).then((surQ)=>{
+    //     res.send(surQ);
+    // });
+    order.find({}).then((order)=>{
+        res.send(order);
     });
+
+    
 });
 
 

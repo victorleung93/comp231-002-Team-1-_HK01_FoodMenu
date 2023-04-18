@@ -141,7 +141,7 @@ app.get('/order',(req,res)=>{
 
 app.get("/menu", async (req, res) => {
     const available = req.params.available;
-    item.find({ available :"available"}).then((item) => {
+    item.find({ available }).then((item) => {
         res.send(item);
         console.log(req.query);
     }).catch((err) => {

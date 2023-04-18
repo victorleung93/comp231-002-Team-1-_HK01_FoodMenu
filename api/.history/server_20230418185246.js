@@ -139,17 +139,6 @@ app.get('/order',(req,res)=>{
     
 });
 
-app.get("/menu", async (req, res) => {
-    const available = req.params.available;
-    item.find({ available :"available"}).then((item) => {
-        res.send(item);
-        console.log(req.query);
-    }).catch((err) => {
-        console.log(err);
-        res.status(500).send("Internal Server Error");
-    });
-});
-
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 app.post('/order',async (req, res) => { 

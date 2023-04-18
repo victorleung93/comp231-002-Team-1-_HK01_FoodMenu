@@ -16,7 +16,7 @@ const OrderHistory = () => {
   const token = window.localStorage.getItem("token");
 
     const fetchData = async () => {
-        let res = await axios.get(urlForServer + "orderlist",{
+        let res = await axios.get(urlForServer + "order",{
           headers: {
             Authorization: token
           }
@@ -93,7 +93,7 @@ const checkTheBill=()=>{
     })} 
         
         </div>:<div>
-         
+          
         {display.map((item) => {
             add(item.subPrice)
               return(<div key={item._id}>

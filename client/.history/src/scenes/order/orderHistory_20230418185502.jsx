@@ -16,7 +16,7 @@ const OrderHistory = () => {
   const token = window.localStorage.getItem("token");
 
     const fetchData = async () => {
-        let res = await axios.get(urlForServer + "orderlist",{
+        let res = await axios.get(urlForServer + "orderl",{
           headers: {
             Authorization: token
           }
@@ -32,7 +32,7 @@ const OrderHistory = () => {
         const  getOrderList = async () => {
        
     
-        let orderlist = await axios.get(urlForServer + "order");
+        let orderlist = await axios.get(urlForServer + "orderlist");
         // const itemsJson = await items.json();
         const sortedOrders =orderlist.data.sort((a, b) => new Date(b.date) - new Date(a.date));
         setOrderList(sortedOrders);
@@ -93,7 +93,7 @@ const checkTheBill=()=>{
     })} 
         
         </div>:<div>
-         
+          
         {display.map((item) => {
             add(item.subPrice)
               return(<div key={item._id}>

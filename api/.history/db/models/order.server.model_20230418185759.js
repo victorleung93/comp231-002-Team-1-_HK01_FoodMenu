@@ -2,9 +2,6 @@ const mongoose=require('mongoose');
 
 const orderSchema = new mongoose.Schema({
     // _id: mongoose.Schema.Types.ObjectId,
-    customer:{
-        type:String
-    },
     order:{
         type: Object,
         required:true
@@ -25,8 +22,7 @@ const orderSchema = new mongoose.Schema({
         // required:true
     },
     date:{
-        type:Date,
-        default:Date.now
+        type:dat
     }
    
     // description:{

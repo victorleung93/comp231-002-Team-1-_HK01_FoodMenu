@@ -112,7 +112,7 @@ app.patch('/data/:id',(req,res)=>{
 
 
 //get list of q
-app.get('/orderlist', async (req, res) => {
+app.get('/orderlsit', async (req, res) => {
     const token = req.headers.authorization;
   
     try {
@@ -137,17 +137,6 @@ app.get('/order',(req,res)=>{
     });
 
     
-});
-
-app.get("/menu", async (req, res) => {
-    const available = req.params.available;
-    item.find({ available :"available"}).then((item) => {
-        res.send(item);
-        console.log(req.query);
-    }).catch((err) => {
-        console.log(err);
-        res.status(500).send("Internal Server Error");
-    });
 });
 
 

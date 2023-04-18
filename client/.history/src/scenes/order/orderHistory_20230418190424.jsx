@@ -93,7 +93,7 @@ const checkTheBill=()=>{
     })} 
         
         </div>:<div>
-         
+          <ppppp
         {display.map((item) => {
             add(item.subPrice)
               return(<div key={item._id}>

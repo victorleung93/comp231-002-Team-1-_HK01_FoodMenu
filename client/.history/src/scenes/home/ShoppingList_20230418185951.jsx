@@ -30,7 +30,7 @@ const ShoppingList = ( ) => {
        
         //   { method: "GET" }
         // );
-        let items = await axios.get(urlForServer + "menu");
+        let items = await axios.get(urlForServer + "a");
         // const itemsJson = await items.json();
         dispatch(setItems(items.data));
       }

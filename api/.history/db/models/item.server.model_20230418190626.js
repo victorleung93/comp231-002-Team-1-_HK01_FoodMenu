@@ -34,7 +34,7 @@ const ItemSchema = new mongoose.Schema({
         // unique: true
     },
     available:{
-        type:String
+        
     }
     // description:{
     //     type:String,

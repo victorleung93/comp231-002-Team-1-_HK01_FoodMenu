@@ -29,7 +29,7 @@ const Itemform = () =>{
 
  // FETCH THE FILE FROM MONGO DB, AND SAVE THE BIN64 STRING INTO STATE
  const fetchData = async () => {
-    let res = await axios.get(urlForServer + "data");
+    let res = await axios.get(urlForServer + "Data");
     console.log(res.data);
     setDisplay(res.data);
   };
